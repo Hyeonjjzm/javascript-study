@@ -20,7 +20,8 @@ let invadersLoc = [
 ]
 
 let gameInterval;
-
+let bulletId;
+let bulletLoc = playerLoc;
 function makePlayer() {
     stage[playerLoc].classList.add("player");
 }
@@ -61,6 +62,7 @@ function gameStart() {
     invadersLoc.forEach(function(invader){
         stage[invader].classList.remove("invader");
     });
+    display.innerText = ""
     playerLoc = stageSize*(stageSize-2)+7 // 202
     invadersLoc = [
         0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
@@ -69,9 +71,15 @@ function gameStart() {
     ]
     makePlayer();
     makeInvader();
+    displayStatus();
     gameInterval = setInterval(gameRun, 1000);
     document.addEventListener("keyup", movePlayer);
-    gameRun();
+    gameRun()
+}
+
+function gameStop() {
+    clearInterval(gameInterval);
+    document.removeEventListener("keyup", movePlayer);
 }
 
 function gameRun() {
@@ -82,10 +90,34 @@ function displayStatus(){
     display.innerText = invadersLoc.length + "/" + invadersLoc.length
 }
 
-function gameStop() {
-    clearInterval(gameInterval);
-    document.removeEventListener("keyup", movePlayer);
+function moveBullet(){
+    stage[bulletLoc].classList.remove("bullet");
+    bulletLoc -= stageSize;
+    stage[bulletLoc].classList.add("bullet");
 }
 
+function shoot(e) {
+    let id;
+    let bulletLoc = playerLoc;
+    function moveBullet(){
+        stage[bulletLoc].classList.remove("bullet");
+        if (stage[bulletLoc].classList.contains("invader")){
+            stage[bulletLoc].classList.remove("invader")
+            stage[bulletLoc].classList.remove("bullet")
+            stage[bulletLoc].classList.add("boom")
+            
+        }
+        bulletLoc -= stageSize;
+        if (bulletLoc < 0){
+            clearInterval(id);
+            return;
+        }
+        stage[bulletLoc].classList.add("bullet");
+    }
+    if (e.key === "ArrowUp"){
+        id = setInterval(moveBullet, 300)
+    }
+}
+document.addEventListener("keydown", shoot);
 startBtn.addEventListener("click", gameStart);
 stopBtn.addEventListener("click", gameStop);
