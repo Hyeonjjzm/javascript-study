@@ -1,0 +1,127 @@
+[ python-backend ]
+a = 1 #정수
+a = ' b '
+a = " c "
+d = { } dict = 사전 =json과 연관됨
+e = [ ]
+f = ( ) 튜플 값이 안 바뀜 (순서를 지정하지 않음
+
+float = 실수로 바꿈
+
+s1 = 4
+s1 += 1   #s1 = s1 + 1
+
+(사칙연산 부호)
+
+<자료형>
+int = 정수
+float = 실수
+str = 문자
+set = 중복된거 제거 1하나면 출력함.
+
+<조건문>
+if  값 :
+
+elif 값 :
+
+else: 
+
+<반복문>
+
+for i in range( )
+몇번 돌릴지 미리 정해놓고 함 = 값을 정해뒀는지
+
+while
+조건 반복문
+
+<백앤드>
+REST 
+API
+post -> 데이터 전송
+get -> 조회
+put -> 수정
+delete -> 삭제
+
+<Flask>
+= 라이브러리
+@app.route = / sign-up 을 지정 = 루트를 지정함 [methods] = 
+jsonify = js를 만듦
+new 딕셔너리 만듦
+app.run( ) app = flask = app을 실행함.
+함수 이름 중복 X
+
+<postman>
+테스트
+add request
+
+Flask 명령어 실행 시 -> 테스트 함
+
+<git hub>
+저장할때 씀
+
+pip install falsk
+
+git init
+git config --global user.name "이름"
+git config --global user.email "email"
+git remote add origin "레포지토리 주소"
+git bash에 마스터로 되어져 있으면 git checkout -b main
+git pull origin main
+
+
+[ java_script ]
+git hub
+vs code
+vs code extention
+->나머지는 파이썬 백 엔드
+
+<기본 문법>
+1. 변수
+let a = 1 -> 재선언 불가능, 재할당 가능
+			=> 값은 바뀔 수 있다
+var a = 1 -> 재선언 가능, 재할당 가능
+			=>
+const = 1 -> 둘다 안됨
+
+let a = 1
+let a = 10
+=> 오류
+
+2. 자료형
+Number 
+String => 문자형
+Null
+Undefined
+Boolean
+Symbol
+Object
+
+3. 연산자
+
+ex)
+data = 5
+console.log(++data) = 6 #더하고 출력
+console.log(data++) = 6 #쓰고 출력? -> 몇개인지 물어보고 하나 더 추가 => 보이는 그대로
+
+
+script => "자바 스크립트 쓸 것 이다"라고 할때 쓰는 거
+
+
+4. 선택자
+querySelector : 하나
+querySelectorAll  : 하나
+	아이디 #
+	클래스 .
+
+앱콘
+시프
+응프
+그래픽
+국
+여ㅑㅇ
+수
+한
+한
+ 
+
+
